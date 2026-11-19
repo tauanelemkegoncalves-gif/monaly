@@ -1,0 +1,15 @@
+MONALY — SITE + PAINEL ADMINISTRATIVO
+
+1. Crie uma conta gratuita em https://supabase.com e um novo projeto.
+2. Em Authentication > Providers > Email, mantenha o login por e-mail habilitado. Desabilite cadastro público (Allow new users to sign up) para que somente você possa acessar.
+3. Em Authentication > Users, crie/convide o seu próprio usuário administrador e defina uma senha segura pelo fluxo do Supabase. Não compartilhe a senha.
+4. Abra supabase-setup.sql e substitua ADMIN_EMAIL_AQUI pelo seu e-mail. Execute todo o arquivo no SQL Editor. Confirme que a inserção em admin_users retornou uma linha; se não, confirme que o usuário já existe em Authentication > Users e execute o INSERT novamente.
+5. Em Project Settings > API, copie Project URL e a chave PÚBLICA anon/publishable para config.js. NUNCA use a chave service_role ou secret no site.
+6. Publique a pasta monaly-site no Netlify (incluindo index.html e config.js).
+7. Acesse https://SEU-SITE.netlify.app/#/admin, faça login e cadastre os produtos.
+8. O catálogo público consulta a tabela products e mostra os produtos visíveis. Ao ativar o Supabase, os produtos demonstrativos deixam de ser usados quando a consulta funciona.
+9. Pedidos continuam indo diretamente ao WhatsApp, sem cobrança no site.
+
+SEGURANÇA: as regras RLS do SQL limitam edição e upload ao usuário cadastrado em admin_users. A chave pública é apropriada ao navegador; a chave secreta nunca deve ser exposta. As imagens do bucket são públicas para aparecer na loja.
+
+NOTAS: os produtos de exemplo não são importados automaticamente para o banco. O cadastro aceita uma foto principal por produto. Não há painel de pedidos porque a finalização ocorre pelo WhatsApp. O plano gratuito do Supabase tem limites e condições próprias.
