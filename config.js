@@ -1,6 +1,4 @@
-// Copie a URL e a chave "anon" / "publishable" de Project Settings > API no Supabase.
-// Nunca coloque uma chave service_role ou secret aqui.
 window.MONALY_SUPABASE = {
-  url: "",
-  anonKey: ""
+  url: "https://wkbiujxenpbnxqbnukyp.supabase.co",
+  anonKey: "sb_publishable_Ke2iC165OE5FNnqid8N9JA_i1-v0HQu"
 };
